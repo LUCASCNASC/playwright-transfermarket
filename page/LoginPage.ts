@@ -8,7 +8,19 @@ export class LoginPage {
   }
 
   async clickMinhaConta() {
-    await this.page.getByRole('link', { name: 'Minha Conta' }).click();
+    await this.page.locator('text=Minha Conta').click();;
+  }
+
+  async fillEmail(email:string) {
+    await this.page.fill('#email', email);
+  }
+
+  async fillSenha(senha:string) {
+    await this.page.fill('#id_senha', senha);
+  }
+
+  async clickProsseguir() {
+    await this.page.getByRole('button', { name: 'Prosseguir' }).click();
   }
 
 }
